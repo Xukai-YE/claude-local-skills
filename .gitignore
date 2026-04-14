@@ -9,3 +9,9 @@ __pycache__/
 dist/
 .venv/
 venv/
+
+# Live Claude skill dirs at repo root (installed directly by Claude)
+# Canonical source is under skills/
+/background-supervisor-skill/
+/effort-calibration/
+/plan-review-collaboration/

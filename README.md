@@ -1,23 +1,36 @@
 # Claude Local Skills
 
-Installable package for local Claude skills from `~/.claude/skills`.
+Custom Claude Code skills. Clone and run the install script to add them to your Claude setup.
 
-## Contents
+## Custom Skills (3)
 
-- `background-supervisor-skill`
-- `effort-calibration`
-- `plan-review-collaboration`
+| Skill | Description |
+|-------|-------------|
+| `background-supervisor-skill` | Automatic Python-based supervision for long-running Claude Code background tasks. Installs hook-driven monitoring into `~/.claude/settings.json`. |
+| `effort-calibration` | Effort auto-calibration — internally rates task difficulty (low/medium/high/max) before responding, adapting analysis depth and output structure accordingly. Always active. |
+| `plan-review-collaboration` | Plan review collaboration for complex experiments, research routes, system design, and multi-stage implementations. Auto-triggers when tasks have multi-step dependencies or high error cost. |
 
-## Install
+## Official Plugins
+
+See [OFFICIAL_PLUGINS.md](OFFICIAL_PLUGINS.md) for the full index of 33 official plugins + 16 external plugins from Anthropic.
+
+Quick install all official plugins in Claude Code:
+```
+/plugins add anthropics/claude-plugins-official
+```
+
+---
+
+## Install Custom Skills
 
 ```powershell
 python scripts/install.py
 ```
 
-To install into a custom Claude home:
+Install to a specific Claude home:
 
 ```powershell
-python scripts/install.py --claude-home "C:\Users\Administrator\.claude"
+python scripts/install.py --claude-home "C:\Users\YourName\.claude"
 ```
 
 ## Uninstall
@@ -34,6 +47,6 @@ python -m unittest discover -s tests
 
 ## Notes
 
-- This package copies only skill directories under `skills/`.
-- It intentionally excludes credentials, settings, telemetry, history, cache, and session files.
-- `background-supervisor-skill` has its own hook installer under `skills/background-supervisor-skill/scripts/install.py`; run that after installing this package if you want to wire Claude hooks.
+- Skills are installed from the `skills/` directory.
+- `background-supervisor-skill` has its own hook installer — run `skills/background-supervisor-skill/scripts/install.py` after installing to wire Claude hooks.
+- Credentials, settings, telemetry, history, cache, and session files are intentionally excluded.
