@@ -20,6 +20,9 @@ class InstallHelpersTests(unittest.TestCase):
             [
                 "background-supervisor-skill",
                 "effort-calibration",
+                "obsidian-memory-router",
+                "obsidian-research-memory",
+                "obsidian-writeback-ledger",
                 "plan-review-collaboration",
             ],
         )
